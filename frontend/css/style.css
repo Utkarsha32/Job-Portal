@@ -1,0 +1,372 @@
+/* General Body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, teal, purple);
+    color: white;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Dark Theme */
+body.dark {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+/* Navbar */
+nav {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: white;
+    margin: 0 1em;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffd700;
+}
+
+nav button {
+    padding: 0.4em 0.8em;
+    border: none;
+    border-radius: 5px;
+    background: #6a0dad;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+nav button:hover {
+    background: teal;
+}
+
+/*hbhjhjb*/
+
+/* === Navbar Enhancements === */
+nav {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(6px);
+}
+
+/* Navigation Links */
+nav a {
+    position: relative;
+    color: white;
+    margin: 0 1em;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.05em;
+    letter-spacing: 0.5px;
+    transition: color 0.3s, transform 0.2s;
+}
+
+/* Hover Animation */
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #ffd700;
+    transition: width 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #ffd700;
+    transform: translateY(-2px);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Active/Current Page Link */
+nav a.active {
+    color: #00ffff;
+}
+
+nav a.active::after {
+    width: 100%;
+    background: #00ffff;
+}
+
+/* Navbar Button */
+nav button {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #6a0dad, #8a2be2);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 6px rgba(138, 43, 226, 0.4);
+}
+
+nav button:hover {
+    background: linear-gradient(135deg, teal, #00bfa5);
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.6);
+}
+
+/* === Dark Theme Navbar Enhancements === */
+body.dark nav a {
+    color: #00e5ff;
+}
+
+body.dark nav a::after {
+    background: #ff6ec7;
+}
+
+body.dark nav a:hover {
+    color: #ff6ec7;
+}
+
+body.dark nav a.active {
+    color: #ff00ff;
+}
+
+body.dark nav a.active::after {
+    background: #ff00ff;
+}
+
+body.dark nav button {
+    background: linear-gradient(135deg, #6a0dad, #ff00ff);
+    box-shadow: 0 0 8px rgba(255, 0, 255, 0.3);
+}
+
+body.dark nav button:hover {
+    background: linear-gradient(135deg, #00e5ff, #00bfa5);
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.5);
+}
+
+
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1.5em;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Forms */
+form input, form textarea {
+    width: 100%;
+    padding: 0.7em;
+    margin: 0.5em 0;
+    border: none;
+    border-radius: 5px;
+}
+
+form textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Buttons */
+button {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    background: purple;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: teal;
+}
+
+/* Job Cards */
+.job-card {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1em;
+    border-radius: 8px;
+    margin-bottom: 1em;
+    transition: transform 0.2s;
+}
+
+.job-card:hover {
+    transform: translateY(-3px);
+}
+
+.job-card h3 {
+    margin: 0;
+}
+
+.job-card p {
+    margin: 0.5em 0 1em 0;
+}
+
+/* Apply Button in Job Cards */
+.job-card button {
+    background: #ff1493;
+}
+
+.job-card button:hover {
+    background: #00ced1;
+}
+
+/* Headings */
+h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    text-shadow: 1px 1px 3px black;
+}
+
+/* Links inside content */
+a {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+    nav a {
+        margin: 0.5em 0;
+    }
+}
+
+h1 {
+    text-align:left;
+    margin-bottom: 1em;
+    text-shadow: 1px 1px 3px black;
+}
+
+/* Dark Theme */
+body.dark {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Dark gradient background */
+    color: #e0e0e0; /* Soft white text */
+}
+
+/* Navbar Dark */
+body.dark nav {
+    background: rgba(20, 30, 50, 0.9); /* Slightly colored navbar */
+}
+
+body.dark nav a {
+    color: #00e5ff; /* Bright cyan links */
+}
+
+body.dark nav a:hover {
+    color: #ff6ec7; /* Pinkish hover */
+}
+
+body.dark nav button {
+    background: #6a0dad; /* Purple */
+    color: #fff;
+}
+
+body.dark nav button:hover {
+    background: #00bfa5; /* Teal hover */
+}
+
+/* Container Dark */
+body.dark .container {
+    background: rgba(40, 40, 60, 0.7); /* Semi-transparent container */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2); /* Soft neon glow */
+}
+
+/* Job Cards Dark */
+body.dark .job-card {
+    background: rgba(70, 0, 100, 0.5); /* Deep purple */
+    border: 1px solid #ff00ff; /* Neon border */
+}
+
+body.dark .job-card h3 {
+    color: #00e5ff; /* Cyan titles */
+}
+
+body.dark .job-card p {
+    color: #c0c0ff; /* Light purple text */
+}
+
+body.dark .job-card button {
+    background: #ff00ff; /* Neon pink button */
+}
+
+body.dark .job-card button:hover {
+    background: #00e5ff; /* Cyan hover */
+}
+
+/* Form Inputs Dark */
+body.dark form input, body.dark form textarea {
+    background: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    border: 1px solid #00e5ff;
+}
+
+/* Buttons Dark */
+body.dark button {
+    background: #ff00ff;
+    color: #fff;
+}
+
+body.dark button:hover {
+    background: #00e5ff;
+}
+
+
+
+#homeSearchInput {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 16px;
+    margin: 20px auto;
+    display: block;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    background-color: white;
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#homeSearchInput:focus {
+    border-color: teal;
+    box-shadow: 0 0 8px rgba(0, 128, 128, 0.4);
+}
+
+body.dark #homeSearchInput {
+    background-color: #2c2c2c;
+    color: #fff;
+    border: 2px solid #555;
+}
+
+body.dark #homeSearchInput:focus {
+    border-color: #00e5ff;
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jobs</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav>
+    <div class="links">JobPortal</div>
+    <div class="links">
+        <a href="index.html">Home</a>
+        <a href="post-job.html">Post Job</a>
+        <a href="login.html" id="login-logout">Login</a>
+    </div>
+    <button id="themeToggle" class="theme-toggle">🌙</button>
+</nav>
+
+<div class="container">
+    <h2>Available Jobs</h2>
+    <div class="job-list" id="jobList"></div>
+</div>
+
+<script src="js/script.js"></script>
+<!--<script>
+const loginLink = document.getElementById('login-logout');
+const token = localStorage.getItem('token');
+if(!token) loginLink.textContent = 'Login';
+else {
+    loginLink.textContent = 'Logout';
+    loginLink.addEventListener('click', () => { localStorage.removeItem('token'); location.href='login.html'; });
+}
+
+const jobList = document.getElementById('jobList');
+
+async function fetchJobs(){
+    try{
+        const res = await fetch('http://localhost:5000/api/jobs');
+        const jobs = await res.json();
+        jobList.innerHTML = jobs.map(job => `
+            <div class="job-card">
+                <h3>${job.title}</h3>
+                <p><strong>Company:</strong> ${job.company}</p>
+                <p><strong>Location:</strong> ${job.location}</p>
+                <p>${job.description}</p>
+                <button class="apply-btn">Apply</button>
+            </div>
+        `).join('');
+
+        document.querySelectorAll('.apply-btn').forEach(btn=>{
+            btn.addEventListener('click', ()=>{ alert('Applied successfully!'); });
+        });
+    }catch(err){ console.error(err); }
+}
+
+fetchJobs();
+</script>-->
+<script>
+  const loginLink = document.getElementById('login-logout');
+  const token = localStorage.getItem('token');
+  
+  // Login/Logout link
+  if(!token) loginLink.textContent = 'Login';
+  else {
+      loginLink.textContent = 'Logout';
+      loginLink.addEventListener('click', () => { 
+          localStorage.removeItem('token'); 
+          location.href='login.html'; 
+      });
+  }
+  
+  const jobList = document.getElementById('jobList');
+  
+  async function fetchJobs() {
+      if (!token) {
+          alert("Please login first!");
+          window.location.href = "login.html";
+          return;
+      }
+      try {
+          const res = await fetch('http://localhost:5000/api/jobs', {
+              headers: { "Authorization": token }
+          });
+          const jobs = await res.json();
+          jobList.innerHTML = jobs.map(job => `
+              <div class="job-card">
+                  <h3>${job.title}</h3>
+                  <p><strong>Company:</strong> ${job.company}</p>
+                  <p><strong>Location:</strong> ${job.location}</p>
+                  <p>${job.description}</p>
+                  <button class="apply-btn">Apply</button>
+              </div>
+          `).join('');
+  
+          document.querySelectorAll('.apply-btn').forEach(btn=>{
+              btn.addEventListener('click', ()=>{ alert('Applied successfully!'); });
+          });
+      } catch(err) {
+          console.error(err);
+      }
+  }
+  
+  fetchJobs();
+  </script>
+  
+</body>
+</html>

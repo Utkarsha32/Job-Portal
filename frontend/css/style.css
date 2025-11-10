@@ -223,7 +223,7 @@ button:hover {
     margin: 0.5em 0 1em 0;
 }
 
-/* Apply Button in Job Cards */
+
 .job-card button {
     background: #ff1493;
 }
@@ -232,14 +232,14 @@ button:hover {
     background: #00ced1;
 }
 
-/* Headings */
+
 h2 {
     text-align: center;
     margin-bottom: 1em;
     text-shadow: 1px 1px 3px black;
 }
 
-/* Links inside content */
+
 a {
     color: #ffd700;
     text-decoration: none;
@@ -249,7 +249,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Responsive */
+
 @media (max-width: 600px) {
     nav {
         flex-direction: column;
@@ -265,70 +265,70 @@ h1 {
     text-shadow: 1px 1px 3px black;
 }
 
-/* Dark Theme */
+
 body.dark {
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Dark gradient background */
-    color: #e0e0e0; /* Soft white text */
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); 
+    color: #e0e0e0; 
 }
 
-/* Navbar Dark */
+
 body.dark nav {
-    background: rgba(20, 30, 50, 0.9); /* Slightly colored navbar */
+    background: rgba(20, 30, 50, 0.9); 
 }
 
 body.dark nav a {
-    color: #00e5ff; /* Bright cyan links */
+    color: #00e5ff; 
 }
 
 body.dark nav a:hover {
-    color: #ff6ec7; /* Pinkish hover */
+    color: #ff6ec7; 
 }
 
 body.dark nav button {
-    background: #6a0dad; /* Purple */
+    background: #6a0dad; 
     color: #fff;
 }
 
 body.dark nav button:hover {
-    background: #00bfa5; /* Teal hover */
+    background: #00bfa5; 
 }
 
-/* Container Dark */
+
 body.dark .container {
-    background: rgba(40, 40, 60, 0.7); /* Semi-transparent container */
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2); /* Soft neon glow */
+    background: rgba(40, 40, 60, 0.7); 
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2); 
 }
 
-/* Job Cards Dark */
+
 body.dark .job-card {
-    background: rgba(70, 0, 100, 0.5); /* Deep purple */
-    border: 1px solid #ff00ff; /* Neon border */
+    background: rgba(70, 0, 100, 0.5); 
+    border: 1px solid #ff00ff; 
 }
 
 body.dark .job-card h3 {
-    color: #00e5ff; /* Cyan titles */
+    color: #00e5ff; 
 }
 
 body.dark .job-card p {
-    color: #c0c0ff; /* Light purple text */
+    color: #c0c0ff; 
 }
 
 body.dark .job-card button {
-    background: #ff00ff; /* Neon pink button */
+    background: #ff00ff; 
 }
 
 body.dark .job-card button:hover {
-    background: #00e5ff; /* Cyan hover */
+    background: #00e5ff; 
 }
 
-/* Form Inputs Dark */
+
 body.dark form input, body.dark form textarea {
     background: rgba(255, 255, 255, 0.1);
     color: #e0e0e0;
     border: 1px solid #00e5ff;
 }
 
-/* Buttons Dark */
+
 body.dark button {
     background: #ff00ff;
     color: #fff;
